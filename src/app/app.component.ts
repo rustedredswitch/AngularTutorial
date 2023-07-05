@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularTutorial';
+  isVisible: Boolean = true;
 
   // onInput(event: Event) {
   //   this.title = (<HTMLInputElement>event.target).value;
@@ -15,5 +16,6 @@ export class AppComponent {
 
   onClick(event: Event) {
     this.title = "Hai cliccato il bottone";
+    this.isVisible = !this.isVisible;
   }
 }

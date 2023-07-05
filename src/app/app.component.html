@@ -1,9 +1,15 @@
 <!-- <app-prova></app-prova> -->
-<button mat-raised-button color="primary" (click)="onClick($event)">
-  Primary
-</button>
 <mat-form-field class="example-full-width">
   <mat-label>Favorite food</mat-label>
   <input matInput placeholder="Ex. Pizza" [(ngModel)]="title" />
 </mat-form-field>
-<p>{{ title }}</p>
+<button mat-raised-button color="primary" (click)="onClick($event)">
+  Visibile
+</button>
+<ng-template *ngIf="isVisible ; then ifBlock else elseBlock"></ng-template>
+<ng-template #ifBlock>
+  <p>{{ title }}</p>
+</ng-template>
+<ng-template #elseBlock>
+  <p>Not visible</p>
+</ng-template>
