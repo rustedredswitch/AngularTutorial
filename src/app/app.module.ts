@@ -9,6 +9,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, ProvaComponent],
@@ -19,7 +20,8 @@ import { MatInputModule } from '@angular/material/input';
     MatSlideToggleModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

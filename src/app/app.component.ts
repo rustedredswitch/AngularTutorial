@@ -8,7 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AngularTutorial';
 
-  onInput(event: Event) {
-    console.log((<HTMLInputElement> event.target).value);
+  // onInput(event: Event) {
+  //   this.title = (<HTMLInputElement>event.target).value;
+  //   // console.log((<HTMLInputElement> event.target).value);
+  // }
+
+  onClick(event: Event) {
+    this.title = "Hai cliccato il bottone";
   }
 }
