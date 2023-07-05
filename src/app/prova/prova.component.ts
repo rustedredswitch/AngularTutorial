@@ -1,10 +1,6 @@
 import {
   Component,
   OnInit,
-  AfterViewInit,
-  AfterViewChecked,
-  AfterContentChecked,
-  AfterContentInit,
 } from '@angular/core';
 
 @Component({
@@ -12,14 +8,13 @@ import {
   templateUrl: './prova.component.html',
   styleUrls: ['./prova.component.css'],
 })
-export class ProvaComponent
-  implements
-    OnInit,
-    AfterViewInit,
-    AfterViewChecked,
-    AfterContentChecked,
-    AfterContentInit
-{
+export class ProvaComponent implements OnInit {
+  isDisabled = false;
+  image = '';
+  image1 =
+    'https://img.freepik.com/free-photo/blossom-floral-bouquet-decoration-colorful-beautiful-flowers-background-garden-flowers-plant-pattern-wallpapers-greeting-cards-postcards-design-wedding-invites_90220-1103.jpg';
+  image2 =
+    'https://img.freepik.com/free-photo/colorful-beautiful-flowers-background-blossom-floral-bouquet-decoration-garden-flowers-plant-pattern-wallpapers-greeting-cards-postcards-design-wedding-invites_90220-1105.jpg';
   cani = [
     {
       nome: 'Roger',
@@ -36,21 +31,8 @@ export class ProvaComponent
 
   ngOnInit(): void {
     console.log('ngOnInit');
-  }
-
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked');
-  }
-
-  ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked');
-  }
-
-  ngAfterContentInit(): void {
-    console.log('ngAfterContentInit');
+    setInterval(() => {
+      this.image === this.image1 ? this.image = this.image2 : this.image = this.image1
+    }, 2000);
   }
 }

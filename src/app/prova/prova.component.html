@@ -4,16 +4,24 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{ cani[0].nome.toUpperCase() }}</mat-card-title>
-    <mat-card-subtitle>{{ 6 < 5 ? 'Dog' : cani[0].razza }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ 6 < 5 ? "Dog" : cani[0].razza }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <img
+    mat-card-image
+    [src]="image"
+    alt="Photo of a Shiba Inu"
+  />
   <mat-card-content>
     <p>
       {{ cani[0].descrizione }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button mat-raised-button color="primary" [disabled]="isDisabled">
+      LIKE
+    </button>
+    <button mat-raised-button color="primary" [disabled]="isDisabled">
+      SHARE
+    </button>
   </mat-card-actions>
 </mat-card>
