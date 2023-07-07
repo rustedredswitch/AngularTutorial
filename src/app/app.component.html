@@ -1,7 +1,6 @@
-<div [ngSwitch]="numero">
-  <p *ngSwitchCase="'uno'">uno</p>
-  <p *ngSwitchCase="'2'">due</p>
-  <p *ngSwitchCase="'tre'">Antonio Golfini</p>
-  <p *ngSwitchCase="'4'">quattro</p>
-  <p *ngSwitchDefault="">default</p>
-</div>
+<ul>
+  <li *ngFor="let persona of persone">
+    <div class="cerchio" [ngStyle]="{'background': persona.isOnline ? 'green' : 'red'}"></div>
+    <p>{{persona.nome}} {{persona.cognome}}</p>
+  </li>
+</ul>

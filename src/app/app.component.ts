@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AngularTutorial';
   isVisible: Boolean = true;
-  numero = "tre";
+
+  persone = [
+    { nome: 'Luca', cognome: 'Rossi', isOnline: true },
+    { nome: 'Marco', cognome: 'Verdi', isOnline: false },
+    { nome: 'Anna', cognome: 'Neri', isOnline: true },
+  ];
 }
