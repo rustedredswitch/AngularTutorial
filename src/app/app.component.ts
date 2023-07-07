@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularTutorial';
-  isVisible: Boolean = true;
 
   persone = [
     { nome: 'Luca', cognome: 'Rossi', isOnline: true },
