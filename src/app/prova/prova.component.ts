@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-prova',
@@ -6,11 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./prova.component.css'],
 })
 export class ProvaComponent implements OnInit {
-  @Input() data: any;
+  @Output() inviaDatiEvento = new EventEmitter<string>();
+  nome = 'Luca';
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.data);
+    console.log(this.nome);
+  }
+
+  inviaDati() {
+    this.inviaDatiEvento.emit(this.nome);
   }
 }

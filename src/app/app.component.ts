@@ -17,4 +17,8 @@ export class AppComponent {
     { nome: 'Franco', cognome: 'Gialli', isOnline: true },
     { nome: 'Giuseppe', cognome: 'Bianchi', isOnline: true },
   ];
+
+  riceviDati(value: string) {
+    console.log(value);
+  }
 }
