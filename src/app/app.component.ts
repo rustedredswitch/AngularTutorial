@@ -9,13 +9,14 @@ export class AppComponent {
   title = 'AngularTutorial';
   isVisible: Boolean = true;
 
-  // onInput(event: Event) {
-  //   this.title = (<HTMLInputElement>event.target).value;
-  //   // console.log((<HTMLInputElement> event.target).value);
-  // }
+  persone = [
+    { nome: 'Luca', cognome: 'Rossi', isOnline: true },
+    { nome: 'Marco', cognome: 'Verdi', isOnline: false },
+    { nome: 'Anna', cognome: 'Neri', isOnline: true },
+  ];
 
   onClick(event: Event) {
-    this.title = "Hai cliccato il bottone";
+    this.title = 'Hai cliccato il bottone';
     this.isVisible = !this.isVisible;
   }
 }
