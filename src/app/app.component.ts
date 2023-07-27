@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewInit {
+  @ViewChild('inputSaluti') inputSaluti!: ElementRef<HTMLInputElement>; //not after inputSaluti means that variable is not null
+
   title = 'AngularTutorial';
 
   persone = [
@@ -18,7 +20,18 @@ export class AppComponent {
     { nome: 'Giuseppe', cognome: 'Bianchi', isOnline: true },
   ];
 
-  riceviDati(value: string) {
-    console.log(value);
+  ngOnInit(): void {
+    console.log('ngOnInit');
+    console.log(this.inputSaluti);
+  }
+
+  ngAfterViewInit(): void {
+    console.log('ngAfterViewInit');
+    console.log(this.inputSaluti);
+  }
+
+  onClick(): void {
+    console.log(this.inputSaluti.nativeElement.value);
+    this.inputSaluti.nativeElement.value = this.title;
   }
 }
