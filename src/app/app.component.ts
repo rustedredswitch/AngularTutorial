@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularTutorial';
-
-  colore = '';
+  oggi = Date.now();
+  saldo = 5;
+  pi = 3.14159265359;
 
   persone = [
     { nome: 'Luca', cognome: 'Rossi', isOnline: true },
@@ -19,8 +20,4 @@ export class AppComponent {
     { nome: 'Franco', cognome: 'Gialli', isOnline: true },
     { nome: 'Giuseppe', cognome: 'Bianchi', isOnline: true },
   ];
-
-  cambiaColoreEvidenziatore(colore: string) {
-    this.colore = colore;
-  }
 }
