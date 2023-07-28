@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServizioService } from '../servizi/servizio/servizio.service';
 
 @Component({
   selector: 'app-prova',
@@ -6,16 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./prova.component.css'],
 })
 export class ProvaComponent implements OnInit {
-  @Output() inviaDatiEvento = new EventEmitter<string>();
-  nome = 'Luca';
-
-  constructor() {}
+  constructor(private servizio: ServizioService) {}
 
   ngOnInit(): void {
-    console.log(this.nome);
-  }
-
-  inviaDati() {
-    this.inviaDatiEvento.emit(this.nome);
+    console.log(this.servizio.getPersone());
   }
 }
