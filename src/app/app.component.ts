@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('inputSaluti') inputSaluti!: ElementRef<HTMLInputElement>; //not after inputSaluti means that variable is not null
-
+export class AppComponent {
   title = 'AngularTutorial';
+
+  colore = '';
 
   persone = [
     { nome: 'Luca', cognome: 'Rossi', isOnline: true },
@@ -20,18 +20,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     { nome: 'Giuseppe', cognome: 'Bianchi', isOnline: true },
   ];
 
-  ngOnInit(): void {
-    console.log('ngOnInit');
-    console.log(this.inputSaluti);
-  }
-
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
-    console.log(this.inputSaluti);
-  }
-
-  onClick(): void {
-    console.log(this.inputSaluti.nativeElement.value);
-    this.inputSaluti.nativeElement.value = this.title;
+  cambiaColoreEvidenziatore(colore: string) {
+    this.colore = colore;
   }
 }

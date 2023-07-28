@@ -1,2 +1,10 @@
-<input #inputSaluti value="test">
-<button (click)="onClick()">Click Me</button>
+<h2>Scegli il colore dell'evidenziatore</h2>
+<div>
+  <input type="radio" name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('red')">Rosso
+  <input type="radio" name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('pink')">Rosa
+  <input type="radio" name="coloreEvidenziatore" (click)="cambiaColoreEvidenziatore('purple')">Viola
+</div>
+
+<p [appHighlight]="colore" defaultColor="black">Paragrafo Test</p>
+<p [appHighlight]="colore" defaultColor="blue">Paragrafo Test</p>
+<p [appHighlight]="colore" defaultColor="green">Paragrafo Test</p>
