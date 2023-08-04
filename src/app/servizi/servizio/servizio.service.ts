@@ -19,4 +19,8 @@ export class ServizioService {
   getPersone() {
     return this.persone;
   }
+
+  getPersona(index: number): any {
+    return [this.persone[index]];
+  }
 }
