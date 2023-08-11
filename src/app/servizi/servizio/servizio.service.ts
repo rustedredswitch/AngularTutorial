@@ -21,6 +21,6 @@ export class ServizioService {
   }
 
   getPersona(index: number): any {
-    return [this.persone[index]];
+    return this.persone[index];
   }
 }

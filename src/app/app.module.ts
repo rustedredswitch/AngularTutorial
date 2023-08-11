@@ -9,12 +9,19 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContactComponent } from './componenti/contact/contact.component';
+import { ContactsComponent } from './componenti/contacts/contacts.component';
 import { HomeComponent } from './componenti/home/home.component';
 import { HighlightDirective } from './direttive/highlight/highlight.directive';
-import { ContactsComponent } from './componenti/contacts/contacts.component';
 
 @NgModule({
-  declarations: [AppComponent, HighlightDirective, HomeComponent, ContactsComponent],
+  declarations: [
+    AppComponent,
+    HighlightDirective,
+    HomeComponent,
+    ContactsComponent,
+    ContactComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
