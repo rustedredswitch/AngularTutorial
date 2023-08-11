@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './componenti/contact/contact.component';
 import { ContactsComponent } from './componenti/contacts/contacts.component';
 import { HomeComponent } from './componenti/home/home.component';
+import { NotFoundComponent } from './componenti/not-found/not-found.component';
 import { HighlightDirective } from './direttive/highlight/highlight.directive';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HighlightDirective } from './direttive/highlight/highlight.directive';
     HomeComponent,
     ContactsComponent,
     ContactComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
