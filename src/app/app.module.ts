@@ -16,6 +16,7 @@ import { HomeComponent } from './componenti/home/home.component';
 import { NotFoundComponent } from './componenti/not-found/not-found.component';
 import { HighlightDirective } from './direttive/highlight/highlight.directive';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     FormsModule,
     MatSelectModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

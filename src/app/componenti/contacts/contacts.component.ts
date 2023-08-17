@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServizioService } from 'src/app/servizi/servizio/servizio.service';
+import { FirebaseService } from 'src/app/servizi/firebase/firebase.service';
 
 @Component({
   selector: 'app-contacts',
@@ -9,11 +9,14 @@ import { ServizioService } from 'src/app/servizi/servizio/servizio.service';
 export class ContactsComponent implements OnInit {
   persone: any;
 
-  constructor(
-    private servizio: ServizioService,
-  ) {}
+  constructor(private fire: FirebaseService) {}
 
   ngOnInit(): void {
-    this.persone = this.servizio.getPersone();
+    this.fire.getPersone().subscribe((data: any) => {
+      console.log(Object.keys(data));
+      this.persone = Object.keys(data).map((key) => {
+        return data[key];
+      });
+    });
   }
 }
