@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +7,20 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('homeform') homeform!: NgForm; // Questo è un secondo metodo già visto e ugualmente funzionante
+  homeform!: FormGroup;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.homeform = new FormGroup({
+      nome: new FormControl(null, Validators.required),
+      email: new FormControl('test@local', [
+        Validators.required,
+        Validators.email,
+      ]),
+      colore: new FormControl(),
+    });
+  }
 
-  onSubmit(form: NgForm) {
-    console.log(form);
-    // console.log(this.homeform);
+  onSubmit() {
+    console.log(this.homeform);
   }
 }
