@@ -1,31 +1,18 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  sub: any;
+export class HomeComponent implements OnInit {
+  @ViewChild('homeform') homeform!: NgForm; // Questo è un secondo metodo già visto e ugualmente funzionante
 
-  ngOnInit(): void {
-    // new Observable((observer) => {
-    //   let count = 0;
-    //   setInterval(() => {
-    //     observer.next(count);
-    //     count++;
-    //   }, 1000);
-    // }).subscribe((number) => {
-    //   console.log(number);
-    // });
+  ngOnInit(): void {}
 
-    this.sub = interval(1000).subscribe((number) => {
-      console.log(number);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+  onSubmit(form: NgForm) {
+    console.log(form);
+    // console.log(this.homeform);
   }
 }
